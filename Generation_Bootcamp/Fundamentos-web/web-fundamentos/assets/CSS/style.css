@@ -1,0 +1,76 @@
+/*
+    Estilos da pagina index
+
+*/
+
+.center{
+    text-align: center;
+}
+
+.p2{
+    font-size: 30;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 10px;
+
+}
+
+.espaçopadrao{
+    padding: 10px;
+}
+
+.menusuperior li{
+    display: inline;
+    padding: 20px;
+}
+
+.menusuperior a{
+    text-decoration: none;
+}
+
+.menusuperior :hover{
+    color:darkgrey
+}
+
+.borda{
+    border-radius: 15px ;
+}
+
+.tamanhoobj{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+.containersuperior{
+    background: grey ;
+    margin: 0px;
+    padding:0px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+
+}
+
+
+.header{
+    background-color: black;
+    width: 100%;
+}
+
+.boxcontato{
+    display: flex;
+    margin: 0px;
+    padding:0px;
+    justify-content: space-around;
+}
+
+/*
+    Estilos da pagina index
+
+*/
+

@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0 d-flex ">
+            <li class="nav-item px-3">
+              <a type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#criarTarefa"><i class="bi bi-plus-square px-2" ></i>Criar
+              </a>
+            </li>
+            <li class="nav-item px-3">
+                <a type="button" class="btn btn-outline-primary btn-sm" href="#"><i class="bi bi-arrow-up-square px-2"></i>Atualizar</a>
+            </li>
+            <li class="nav-item dropdown">
+            </li>
+            <li class="nav-item px-3">
+                <a type="button" class="btn btn-outline-danger btn-sm" href="#"><i class="bi bi-trash px-2"></i>Deletar</a>
+            </li>  
+        </ul>
+      </div>
+    </div>
+    
+  </nav>
+  <div class="container mb-5 mt-5">
+    <nav>
+      <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-todastarefas-tab" data-bs-toggle="tab" data-bs-target="#nav-todastarefas" type="button" role="tab" aria-controls="nav-todastarefas" aria-selected="true">Todas Tarefas</button>
+        <button class="nav-link" id="nav-tarefasconcluidas-tab" data-bs-toggle="tab" data-bs-target="#nav-tarefasconcluidas" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Tarefas Concluidas</button>
+        <button class="nav-link" id="nav-tarefasatrasadas-tab" data-bs-toggle="tab" data-bs-target="#nav-tarefasatrasadas" type="button" role="tab" aria-controls="nav-tarefasatrasadas" aria-selected="false">Tarefas Atrasadas</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-todastarefas" role="tabpanel" aria-labelledby="nav-todastarefas-tab">Todas as Tarefas</div>
+      <div class="tab-pane fade" id="nav-tarefasconcluidas" role="tabpanel" aria-labelledby="nav-tarefasconcluidas-tab">Tarefas Concluidas</div>
+      <div class="tab-pane fade" id="nav-tarefasatrasadas" role="tabpanel" aria-labelledby="nav-tarefasatrasadas-tab">Tarefas Atrasadas</div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="criarTarefa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nova Tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="Titulo">Titulo da Tarefa</label>
+          <input [(ngModel)]='tarefas.titulotarefa' type="text" class="form-control"id="titulo" placeholder="Digite o titulo">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição da Tarefa</label>
+          <textarea [(ngModel)]='tarefas.descricaotarefa' class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="prazoconclusao">Prazo para conclusão</label>
+          <input [(ngModel)]='tarefas.prazoconclusao' type="date" class="form-control" name="prazoconclusao" id="prazoconclusao" rows="3">
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Escolha o Status ou:
+          </label>
+          <select name="status" id="status" class="form-control" [(ngModel)]='idstatus' (change)='findByIdstatus()'>
+            <option *ngFor='let item of listastatus' value="{{item.id}}">
+              {{item.etiqueta}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info btn-sm"  data-bs-dismiss="modal" routerLink='/status' data-dismiss="modal">Criar novo status</button>
+        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success btn-sm"  data-bs-dismiss="modal" (click)="criar()" ><i class="bi bi-plus-square px-2"></i>Criar Tarefa</button>
+        
+      </div>
+    </div>
+  </div>
+</div>

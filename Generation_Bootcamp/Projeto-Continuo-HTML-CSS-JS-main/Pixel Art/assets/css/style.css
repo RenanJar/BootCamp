@@ -1,0 +1,309 @@
+body,
+ul,
+p{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1,2rem;
+    font-family: Arial;
+    box-sizing:border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: azure;
+}
+
+.cabecalho{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.menu li{
+    padding: 10;
+}
+
+.botao{
+    background-color: 0ead69;
+    border-radius: 10px;
+}
+
+
+.painel{
+    display: flex;
+    max-height: 480;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("../img/paisagem\ main\ theme2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.box1{
+    color: white;
+}
+
+.box2{
+    color: white;
+    width: 80px;
+    height: 40px;
+    background-color: 0ead69;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.box2 a{
+    position: absolute;
+    top: 10px;
+    left: 13px;
+}
+
+.grid{
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-auto-rows: 300px;
+    gap: 10px;
+    
+
+}
+
+.grid-item{
+    position: relative;
+}
+
+.grid-item .img-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-item p{
+    position: absolute;
+    background-color: rgb(0, 0, 0,0.6);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color:aliceblue;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.tamanho{
+    grid-row: span 2;
+}
+
+
+@media(max-width:620px){
+
+
+    .grid{
+
+        grid-template-areas: "A" "A" "B" "C" "D" "E"  ;
+        grid-template-columns: 2fr;
+        grid-auto-rows:300px;
+        
+
+    }
+}
+
+.grid-capa{
+    display: grid;
+    margin: auto;
+    max-width: 600px;
+    background-color: aquamarine;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 300px;
+    gap: 30px;
+    background-image: url("../img/teste.jpg");
+
+}
+.grid-capa-item{
+    position: relative;
+}
+
+.grid-capa-item .img-item{
+    max-width: 200px;
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto{
+    position: relative;
+}
+.texto p{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+    transform: translate(0, -50%)
+}
+.duascolunas{
+    grid-column: span 2;
+    background-color: bisque;
+    
+}
+
+.umbloco{
+    grid-row: span 1;
+}
+
+@media(max-width:650px){
+
+    .cabecalho{
+        flex-wrap: wrap;
+    }
+
+    .cabecalho .botao{
+        display:none;
+    }
+
+    .cabecalho a{
+        font-size: 0,2rem;
+
+    }
+
+    .grid-capa{
+        display: grid;
+        margin: auto;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas: "A" "b" "c" "d" "e" "f" "g" "h";
+        gap: 10px;
+        background-image: url("../img/teste.jpg");
+    
+    }
+    .a{grid-area: A;
+
+    }  
+    
+    .b{grid-area: b;
+
+    } 
+
+    .c{grid-area: c;
+
+    } 
+
+    .d{grid-area: d;
+
+    } 
+
+    .e{grid-area: e;
+
+    } 
+
+    .f{grid-area: f;
+
+    } 
+
+    .g{grid-area: g;
+
+    } 
+    .h{grid-area: h;
+
+    } 
+
+
+    .texto p{
+        position: absolute;
+        margin-top:50%;
+        margin-left: 5%;
+        margin-right: 5%;
+        transform: translate(0, -50%)
+    }
+
+    .duascolunas{
+        grid-column: span 1;
+        background-color: bisque;
+        
+    }
+
+    .footer{
+        flex-wrap: wrap;
+    }
+
+    .tamanhoobj{
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+    }
+
+}
+
+.footer{
+    background-color: black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+}
+
+.tamanhoobj{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+
+.boxmaior{
+    display: grid;
+    background-image: url(../img/paisagemlogin.jpg);
+    background-position: cover;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+.boxesquerda{
+    background-color: ffd23f;
+    background-repeat: no-repeat;
+
+}
+
+.boxdireita{
+    display:flex;
+    justify-content:center ;
+    justify-items: center;
+    grid-column: span 2;
+    position: relative;
+    
+}
+
+.boxdireita .arealogin{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.623);
+    position: absolute;
+    margin-top: 20%;
+    width: 40%;
+    height: 60%;
+    
+    
+    
+}
+
